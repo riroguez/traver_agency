@@ -1,0 +1,30 @@
+extends ./layout/index
+block slider 
+    .slider 
+        h1 Rio de Janeiro 
+        em aventura
+block content
+    main.container.mt-5 
+        h2.text-center.mb-5 Sobre Nosotros 
+        .row.mb-5 
+            .col-md-6 
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, sunt? Culpa commodi accusantium facilis! Eum, magni. Neque sapiente, atque doloribus distinctio minima repudiandae perspiciatis ducimus nulla nihil veritatis officiis dolor, ipsam totam expedita ratione sed.
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, vitae. Vitae et quis consequatur sunt, ut mollitia eum ab magnam commodi iure cumque harum rem quibusdam id soluta sit.
+            .col-md-6 
+                img.img-fluid(src="/img/inicio_nosotros.jpg", alt="inicio")
+        hr.d-block.mb-5
+
+        include ./layout/partials/block_trips
+
+    .descuento.mt-5 
+        .container
+            .row 
+                .col-md-6 
+                    .contenido
+                        h5 5% de descuento en todos los viajes
+                        p.titulo Viaje a Canada
+                        p.fecha 12 de Diciembre de 2024 - 28 de Diciembre de 2024
+                        p.precio $2,500 Dólares
+    .container 
+        h2.my-5.text-center Testimoniales 
+        include ./layout/partials/block_testimonials

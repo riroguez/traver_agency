@@ -1,0 +1,31 @@
+extends ./layout/index
+block content
+    main.container.mt-5 
+        h1.text-center.mt-5= page
+
+        blockquote.text-center Lee sobre nuestros clientes y sus experiencias
+
+        include ./layout/partials/block_testimonials
+
+        .row.mt-5 
+            h2.d-block.w-100.text-center.my-4.text-email Agrega un Testimonial
+
+            .row.justify-content-center.col
+                .col-md-8 
+
+                    if errors
+                        each error in errors
+                            .alert.alert-danger.col.py-1= error.message
+
+                    form(method="POST" action="/testimonials")
+                        .form-group
+                            label(for="name") Nombre
+                            input.form-control(type="text" name="name" id="name" placeholder="Tu nombre" value= name)
+                        .form-group
+                            label(for="email") Email
+                            input.form-control(type="email" name="email" id="email" placeholder="Tu email" value= email)
+                        .form-group
+                            label(for="message") Mensaje
+                            textarea.form-control(name="message" id="message" rows="3" placeholder="Tu mensaje")= message
+
+                        button.btn.btn-success.px-4(type="submit") Enviar
